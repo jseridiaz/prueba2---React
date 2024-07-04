@@ -12,6 +12,8 @@ function App() {
   const morOless = (text) => {
     text == 'Menos' ? setValue(value - 1) : setValue(value + 1)
   }
+  const rotateFunction = (e) =>
+    e.target.classList.contains('rotate') ? 'streight' : 'rotate'
 
   useEffect(() => {
     try {
@@ -28,7 +30,7 @@ function App() {
       <section id='character-cards'>
         {console.log(characters)}
         {characters.map((res) => (
-          <Character character={res} />
+          <Character character={res} rotation={rotateFunction} />
         ))}
       </section>
       <div className='gap-m'>
